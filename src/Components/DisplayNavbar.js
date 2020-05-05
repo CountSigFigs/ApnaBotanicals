@@ -18,7 +18,12 @@ const DisplayNavbar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  let cartLength= props.cart.length;
+  let cartLength=0
+
+  for (let i=0; i< props.cart.length; i++){
+    cartLength+= props.cart[i].quanity
+  }
+
   if (cartLength <1){
     cartLength=null;
   }
