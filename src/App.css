@@ -1,0 +1,142 @@
+body{
+  background-color: whitesmoke !important;
+}
+
+html, body, .cover{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+h2{
+  font-size: 48px;
+  color: #3FBF6B;
+}
+
+h3{
+  font-size: 30px;
+  color: #3FBF6B;
+}
+h4{
+  color: #3FBF6B
+}
+h5{
+  color: #3FBF6B
+}
+
+p{
+  font-size: 20px;
+}
+
+.navbar{
+  background-color: #3fbf6b;
+  font-size: 16px;
+  font-family: "poppins", cursive;
+}
+
+.navbar a {
+  color: rgba(0, 0, 0, 0.5);
+  margin-right: 15px;
+}
+
+.welcome{
+  color: #3fbf6b;
+  font-size: 58px;
+  font-family: "poppins", cursive;
+}
+
+.fa-leaf{
+  color: #3fbf6b;
+}
+
+.green{
+  color: #3fbf6b;
+}
+
+.btn{
+  background-color: #3fbf6b !important;
+  border: #3fbf6b !important;
+}
+
+.btn a{
+  color: white
+}
+.kratomInfo{
+  margin-top: 65px;
+}
+
+.img1{
+  height: 325px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 5px;
+  }
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+.overlay:hover .image {
+    opacity: 0.3;
+  }
+  
+.overlay:hover .middle {
+    opacity: 1;
+  }
+
+.productDisplay{
+  background-color: whitesmoke;
+  border: none
+}
+.card-body{
+  border: solid 1px #3FBF6B
+}
+#owner{
+  border-radius: 50%;
+}
+form label{
+  color: #3FBF6B;
+  font-weight: bold;
+}
+
+.footer{
+  background-color: #3fbf6b;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+.footer a{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card-text{
+  font-size: 16px;
+}
+
+.underscore {
+  background-color: #3FBF6B;
+  width: 75px;
+  border: #3FBF6B 3px solid;
+  border-radius: 5px;
+}
+
+#closeUp{
+  border-radius: 5px;
+}
