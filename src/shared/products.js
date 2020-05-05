@@ -5,7 +5,8 @@ export const PRODUCTS= [
         type: 'Capsule',
         image: 'assets/images/gold-c.png',
         description: 'Calming and Soothing',
-        price: 10
+        price: 10,
+        quanity:1
     },
     {
         id: 1,
@@ -13,7 +14,8 @@ export const PRODUCTS= [
         type: 'Capsule',
         image: 'assets/images/green-c.png',
         description: 'Energy driven, focusing',
-        price: 10
+        price: 10,
+        quanity:1
     },
     {
         id: 2,
@@ -21,7 +23,8 @@ export const PRODUCTS= [
         type: 'Capsule',
         image: 'assets/images/red-c.png',
         description: 'Fast and Furious',
-        price: 10
+        price: 10,
+        quanity:1
     },
     {
         id: 3,
@@ -29,7 +32,8 @@ export const PRODUCTS= [
         type: 'Capsule',
         image: 'assets/images/red-c.png',
         description: 'Attentive and alert',
-        price: 10
+        price: 10,
+        quanity:1
     },
     {
         id: 4,
@@ -37,6 +41,7 @@ export const PRODUCTS= [
         type: 'Capsule',
         image: 'assets/images/red-c.png',
         description: 'Focus and alert',
-        price: 10
+        price: 10,
+        quanity:1
     }
   ]
