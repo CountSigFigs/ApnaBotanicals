@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardImg, CardText, CardBody, CardTitle, Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import {Card, CardImg, CardText, CardBody, CardTitle, Button} from 'reactstrap'
 
 
 
@@ -13,15 +13,12 @@ class RenderProducts extends React.Component{
                     <CardImg src={item.image} />
                     <CardBody className="text-center">
                         <CardTitle className="text-center"><span className="green">{item.name}</span></CardTitle>
-                        <CardText className="text-center">{item.description}<br />Price: ${item.price} per oz</CardText>
-                        <Form>
-                            <FormGroup className='d-flex inline justify-content-center'>
-                               <Label className='mr-2 my-auto' for='quanity'>Quanity</Label>
-                               <Input type='number' style={{width:75}}>
-                               </Input>
-                            </FormGroup>
-                            <Button className="btn text-center" onClick={() => this.props.onClick(item)}> Add to Cart</Button>
-                        </Form>
+                        <CardText className="text-center">
+                            {item.description}<br />
+                            Price: ${item.price} per oz.                    
+                        </CardText>
+                        Add to Cart
+                        <i class="fa fa-plus-circle fa-2x ml-2" onClick={() => this.props.onClick(item)}></i>
                     </CardBody>
                 </Card>
             </div>
