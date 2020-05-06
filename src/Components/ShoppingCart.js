@@ -10,22 +10,31 @@ class RenderCartItems extends Component{
       
     render () {
 
-        let price= this.props.cart.length * 10;
+        let totalQuanity=0
+
+        for (let i=0; i< this.props.cart.length; i++){
+            totalQuanity+= this.props.cart[i].quanity
+        }
+
+        let price= totalQuanity * 10;
         let tax= price * 0.065;
         let taxes= tax.toFixed(2)
         let total= (price + tax).toFixed(2);
 
         const displayItems= this.props.cart.map(item =>{
-        return (
-            <tr key={item.id}>
-                    <td><img src={item.image} alt='product' height='100px'/></td>
-                    <td>{item.name}</td>
-                    <td>{item.type}</td>
-                    <td>${item.price}</td>
-                    <td><Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button></td>
-            </tr>
-        )
-    })
+
+            let totalPrice= item.quanity * item.price;
+                return (
+                    <tr key={item.id}>
+                            <td><img src={item.image} alt='product' height='100px'/></td>
+                            <td>{item.name}</td>
+                            <td>{item.type}</td>
+                            <td>{item.quanity}</td>
+                            <td>${totalPrice}</td>
+                            <td><Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button></td>
+                    </tr>
+                )
+            })
     return (
         <div className="container mt-5">
             <div className="row">
@@ -36,6 +45,7 @@ class RenderCartItems extends Component{
                                 <th></th>
                                 <th>Product Name</th>
                                 <th>Product Type</th>
+                                <th>Quanity</th>
                                 <th>Price</th>
                                 <th></th>
                             </tr>
@@ -48,10 +58,12 @@ class RenderCartItems extends Component{
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                                 <th>Subtotal</th>
                                 <th>{price}</th>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -62,10 +74,12 @@ class RenderCartItems extends Component{
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                                 <th>Total</th>
                                 <th>{total}</th>
                             </tr>
                             <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
