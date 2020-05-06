@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -8,9 +9,13 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem} from 'reactstrap';
+  DropdownItem,} from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom'
 
+const cartStyle={
+  backgroundColor: '#5ee08c',
+  color:'rgba(0, 0, 0, 0.5)'
+}
 
 const DisplayNavbar = (props) => {
   
@@ -57,9 +62,9 @@ const DisplayNavbar = (props) => {
           </Nav>
         </Collapse>
         <Nav navbar> 
-            <Link to='/shoppingcart'>
-                My Cart <span className="badge badge-secondary mx-1">{cartLength}</span>
-            </Link>
+          <Link to='/shoppingcart'>
+            <Button type='button' style={cartStyle}>My Cart</Button><span className="badge badge-secondary mx-1">{cartLength}</span>
+          </Link>  
         </Nav>
       </Navbar>
     </div>
