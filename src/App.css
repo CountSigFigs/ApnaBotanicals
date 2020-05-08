@@ -38,6 +38,9 @@ p{
   color: rgba(0, 0, 0, 0.5);
   margin-right: 15px;
 }
+#home:hover{
+  color: rgba(0, 0, 0, 0.75)
+}
 
 #dropDownMenu:hover{
   color: rgba(0, 0, 0, 0.75)
@@ -61,7 +64,9 @@ p{
 #shoppingCartDropDown:hover{
   cursor: pointer;
 }
-
+#checkoutButton:hover{
+  background-color: rgba(0, 0, 0, 0);
+}
 .welcome{
   color: #3fbf6b;
   font-size: 58px;

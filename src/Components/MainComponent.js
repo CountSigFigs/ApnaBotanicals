@@ -26,6 +26,7 @@ class Main extends Component {
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleClick(item) {
@@ -62,7 +63,11 @@ class Main extends Component {
             cart: newCart
         })
     }
-
+    handleReset(){
+        this.setState({
+            cart:[]
+        })
+    }
     render() {
         return (
             <div>
@@ -90,7 +95,7 @@ class Main extends Component {
                         <ShoppingCart cart={this.state.cart} onClick={this.handleDelete} />
                     </Route>
                     <Route exact path='/checkout'>
-                        <Checkout cart={this.state.cart} />
+                        <Checkout cart={this.state.cart} onClick={this.handleReset} />
                     </Route>
                     <Route exact path='/submission'>
                         <Submission />

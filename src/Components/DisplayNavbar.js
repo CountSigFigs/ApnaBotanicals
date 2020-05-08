@@ -62,7 +62,7 @@ class DisplayNavbar extends Component {
           <NavbarToggler onClick={this.toggleNav} />
           <Collapse isOpen={this.state.isNavOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <Link to='/' className="mt-2"><i className="fa fa-home fa-lg" /></Link>
+              <Link to='/' className="mt-2"><i className="fa fa-home fa-lg" id='home' /></Link>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Products
@@ -99,7 +99,7 @@ class DisplayNavbar extends Component {
                       <div className='shopping-items' style={{width:300}}>
                        {displayItems}
                       </div>
-                        <DropdownItem>
+                        <DropdownItem id='checkoutButton'>
                           <Link to='/shoppingcart'><Button>Checkout</Button></Link>
                         </DropdownItem>
                     </div>
