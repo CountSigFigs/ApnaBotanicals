@@ -43,13 +43,14 @@ class DisplayNavbar extends Component {
       cartLength = null;
     }
 
+    //total amount
+    let total= cartLength * 10;
+
     //displays items in dropdown cart
     const displayItems = this.props.cart.map(item => {
       return (
-        <li key={item.id} className="list-group-item d-flex justify-content-between">
-          <div className="my-0">
-            <small>{item.name}</small>
-          </div>
+        <li key={item.id} style={{listStyle:'none'}} className='my-2'>
+          <small><img src={item.image} style={{height:50}} className='mr-2' alt={item.name} />{item.name}</small><small className='float-right mt-3'>Qty:{item.quanity}</small>
         </li>
       )
     })
@@ -93,7 +94,10 @@ class DisplayNavbar extends Component {
                     <div className='row shoppingCart'>
                       <div className='shopping-cart-header'>
                       <i class="fa fa-shopping-cart cart-icon"></i>Cart<span class="badge">{cartLength}</span>
-                        <span class="lighter-text float-right">Total:</span>
+                        <span class="lighter-text float-right">Total:${total}</span>
+                      </div>
+                      <div className='shopping-items' style={{width:300}}>
+                       {displayItems}
                       </div>
                         <DropdownItem>
                           <Link to='/shoppingcart'><Button>Checkout</Button></Link>
