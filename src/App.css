@@ -39,8 +39,16 @@ p{
   margin-right: 15px;
 }
 
+#dropDownMenu:hover{
+  color: rgba(0, 0, 0, 0.75)
+}
+
 #shoppingCartDropDown{
   margin-right: 50px;
+}
+
+#shoppingCartDropDown:hover{
+  cursor: pointer;
 }
 
 .welcome{

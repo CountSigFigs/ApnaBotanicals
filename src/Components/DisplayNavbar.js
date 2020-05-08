@@ -75,7 +75,7 @@ class DisplayNavbar extends Component {
             <Nav>
             <NavItem className='mr-4'>
             <UncontrolledDropdown>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav id='dropDownMenu'>
               <i class="fa fa-shopping-cart"></i> Cart <span class="badge">{cartLength}</span>
               </DropdownToggle>
                 <DropdownMenu left id="shoppingCartDropDown">
