@@ -39,6 +39,25 @@ p{
   margin-right: 15px;
 }
 
+.shoppingCartContainer {
+  margin: auto;
+  width: 80%;
+  z-index: 5;
+  position: relative
+}
+
+.shoppingCartList {
+  margin: 20px 0;
+  float: right;
+  background: white;
+  width: 320px;
+  position: relative;
+  border-radius: 3px;
+  padding: 20px;
+  z-index: 5
+  
+}
+
 .welcome{
   color: #3fbf6b;
   font-size: 58px;

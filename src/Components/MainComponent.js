@@ -29,7 +29,7 @@ class Main extends Component {
     }
 
     handleClick(item) {
-
+        //updates quanity of item if already in cart
         if (this.state.cart.includes(item)){
 
             let newCart = this.state.cart
@@ -44,7 +44,7 @@ class Main extends Component {
             })
             console.log(this.state.cart)
         }
-        
+        //adds item to cart if not there already 
         else {
         let newCart = this.state.cart
         newCart.push(item)
@@ -53,7 +53,7 @@ class Main extends Component {
         })
         }
     }
-
+    //deletes item from cart 
     handleDelete(item) {
         let newCart = this.state.cart;
         let index = newCart.indexOf(item)
