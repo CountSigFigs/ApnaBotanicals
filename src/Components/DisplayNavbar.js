@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -72,7 +73,19 @@ class DisplayNavbar extends Component {
               </NavItem>
             </Nav>
             <Nav>
-              
+            <NavItem className='mr-4'>
+            <UncontrolledDropdown>
+              <DropdownToggle nav caret>
+              <i class="fa fa-shopping-cart"></i> Cart <span class="badge">{cartLength}</span>
+              </DropdownToggle>
+                <DropdownMenu left id="shoppingCartDropDown">
+                  <div>Hello!</div>
+                  <DropdownItem>
+                    <Link to='/shoppingcart'><Button>Checkout</Button></Link>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
