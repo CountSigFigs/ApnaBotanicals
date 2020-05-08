@@ -43,6 +43,16 @@ class DisplayNavbar extends Component {
       cartLength = null;
     }
 
+    //displays items in dropdown cart
+    const displayItems = this.props.cart.map(item => {
+      return (
+        <li key={item.id} className="list-group-item d-flex justify-content-between">
+          <div className="my-0">
+            <small>{item.name}</small>
+          </div>
+        </li>
+      )
+    })
 
 
     return (
@@ -76,13 +86,20 @@ class DisplayNavbar extends Component {
             <NavItem className='mr-4'>
             <UncontrolledDropdown>
               <DropdownToggle nav id='dropDownMenu'>
-              <i class="fa fa-shopping-cart"></i> Cart <span class="badge">{cartLength}</span>
+                <i class="fa fa-shopping-cart"></i> Cart <span class="badge badge-light ml-1">{cartLength}</span>
               </DropdownToggle>
                 <DropdownMenu left id="shoppingCartDropDown">
-                  <div>Hello!</div>
-                  <DropdownItem>
-                    <Link to='/shoppingcart'><Button>Checkout</Button></Link>
-                  </DropdownItem>
+                  <div className='container'>
+                    <div className='row shoppingCart'>
+                      <div className='shopping-cart-header'>
+                      <i class="fa fa-shopping-cart cart-icon"></i>Cart<span class="badge">{cartLength}</span>
+                        <span class="lighter-text float-right">Total:</span>
+                      </div>
+                        <DropdownItem>
+                          <Link to='/shoppingcart'><Button>Checkout</Button></Link>
+                        </DropdownItem>
+                    </div>
+                  </div>
                 </DropdownMenu>
               </UncontrolledDropdown>
               </NavItem>
