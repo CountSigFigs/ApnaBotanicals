@@ -256,8 +256,12 @@ class Checkout extends Component {
       this.state.ccExpiration,
       this.state.ccCVV
     );
-
-    let price = this.props.cart.length * 10;
+    
+    let price = 0;
+    for (let i=0; i<this.props.cart.length; i++){
+      price += this.props.cart[i].quanity
+    }
+    price = price * 10;
     let tax = price * 0.065;
     let taxes = tax.toFixed(2)
     let total = (price + tax).toFixed(2);
@@ -267,9 +271,9 @@ class Checkout extends Component {
         <li key={item.id} className="list-group-item d-flex justify-content-between">
           <div className="my-0">
             <h6>{item.name}</h6>
-            <small className="muted">{item.type}</small>
+            <small className="muted">{item.type}  Qty:{item.quanity}</small>
           </div>
-          <span className="muted">${item.price}</span>
+          <span className="muted">${item.quanity * 10}</span>
         </li>
       )
     })
