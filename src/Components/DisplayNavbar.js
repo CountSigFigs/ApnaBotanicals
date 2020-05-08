@@ -50,7 +50,7 @@ class DisplayNavbar extends Component {
     const displayItems = this.props.cart.map(item => {
       return (
         <li key={item.id} style={{listStyle:'none'}} className='my-2'>
-          <small><img src={item.image} style={{height:50}} className='mr-2' alt={item.name} />{item.name}</small><small className='float-right mt-3'>Qty:{item.quanity}</small>
+          <small><img src={item.image} style={{height:50}} className='mr-2' alt={item.name} />{item.name}</small><small className='float-right mt-3'>Qty: {item.quanity}</small>
         </li>
       )
     })
@@ -94,7 +94,7 @@ class DisplayNavbar extends Component {
                     <div className='row shoppingCart'>
                       <div className='shopping-cart-header'>
                       <i class="fa fa-shopping-cart cart-icon"></i>Cart<span class="badge">{cartLength}</span>
-                        <span class="lighter-text float-right">Total:${total}</span>
+                        <span class="lighter-text float-right">Total: ${total}</span>
                       </div>
                       <div className='shopping-items' style={{width:300}}>
                        {displayItems}
