@@ -12,21 +12,25 @@ import Home from './HomeComponent'
 import Footer from './DisplayFooter';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux';
-
+import ACTIONS from '../Redux/actions'
 
 const mapStateToProps= state => {
     return {
         display: state.display,
         powders: state.powders,
-        products: state.capsules
+        products: state.capsules,
+        cart: state.cart
     }
 }
+
+const mapDispatchToProps= dispatch => ({
+    addItem: item => dispatch(ACTIONS.addItem(item))
+})
 
 class Main extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            cart: []
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -35,29 +39,9 @@ class Main extends Component {
 
     handleClick(item) {
         //updates quanity of item if already in cart
-        if (this.state.cart.includes(item)){
-
-            let newCart = this.state.cart
-            let index = newCart.indexOf(item)
-            newCart.splice(index, 1)
-
-            let newQuanity= item.quanity+=1;
-            item.quanity= newQuanity
-            newCart.push(item)  
-            this.setState({
-                cart: newCart
-            })
-            console.log(this.state.cart)
-        }
-        //adds item to cart if not there already 
-        else {
-        let newCart = this.state.cart
-        newCart.push(item)
-        this.setState({
-            cart: newCart
-        })
-        }
+        this.props.addItem(item)
     }
+
     //deletes item from cart 
     handleDelete(item) {
         let newCart = this.state.cart;
@@ -77,7 +61,7 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <DisplayNavbar cart={this.state.cart} />
+                <DisplayNavbar cart={this.props.cart} />
                 <Switch>
                     <Route path='/home'>
                         <Home display={this.props.display} />
@@ -98,10 +82,10 @@ class Main extends Component {
                         <ContactUs />
                     </Route>
                     <Route exact path='/shoppingcart'>
-                        <ShoppingCart cart={this.state.cart} onClick={this.handleDelete} />
+                        <ShoppingCart cart={this.props.cart} onClick={this.handleDelete} />
                     </Route>
                     <Route exact path='/checkout'>
-                        <Checkout cart={this.state.cart} onClick={this.handleReset} />
+                        <Checkout cart={this.props.cart} onClick={this.handleReset} />
                     </Route>
                     <Route exact path='/submission'>
                         <Submission />
@@ -114,4 +98,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main))
