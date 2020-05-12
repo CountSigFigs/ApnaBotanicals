@@ -8,20 +8,24 @@ import NewUserGuide from './faqs';
 import ShoppingCart from './ShoppingCart'
 import Checkout from './checkout';
 import Submission from './Submission';
-import { PRODUCTS } from '../shared/products';
-import { POWDERS } from '../shared/powders';
 import Home from './HomeComponent'
 import Footer from './DisplayFooter';
-import { DISPLAY } from '../shared/productDisplay'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import {connect} from 'react-redux';
+
+
+const mapStateToProps= state => {
+    return {
+        display: state.display,
+        powders: state.powders,
+        products: state.capsules
+    }
+}
 
 class Main extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: PRODUCTS,
-            powders: POWDERS,
-            display: DISPLAY,
             cart: []
         }
         this.handleClick = this.handleClick.bind(this);
@@ -63,24 +67,26 @@ class Main extends Component {
             cart: newCart
         })
     }
+
     handleReset(){
         this.setState({
             cart:[]
         })
     }
+    
     render() {
         return (
             <div>
                 <DisplayNavbar cart={this.state.cart} />
                 <Switch>
                     <Route path='/home'>
-                        <Home display={this.state.display} />
+                        <Home display={this.props.display} />
                     </Route>
                     <Route exact path='/directory'>
-                        <DisplayCards products={this.state.products} onClick={this.handleClick} />
+                        <DisplayCards products={this.props.products} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/powders'>
-                        <DisplayPowders powders={this.state.powders} onClick={this.handleClick} />
+                        <DisplayPowders powders={this.props.powders} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/about'>
                         <AboutUs />
@@ -108,4 +114,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main))

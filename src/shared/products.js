@@ -1,4 +1,4 @@
-export const PRODUCTS= [
+export const CAPSULES= [
     {
         id: 0,
         name: 'Kratom Gold',
