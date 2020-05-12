@@ -114,7 +114,7 @@ p{
 
 .fa-plus-circle:focus, .fa-plus-circle:active {
   -webkit-transform: scale(1.3);
-  transform: translateY(4px);
+  transform: scale(1.3);
 }
 
 .kratomInfo{
