@@ -1,8 +1,8 @@
 const Types = {
     ADD_ITEM: 'ADD_ITEM',
-    DELETE_ITEM: 'DELETE_ITEM'
+    DELETE_ITEM: 'DELETE_ITEM',
+    RESET_CART: 'RESET_CART'
 };
-
 
 const addItem = item => ({
     type: Types.ADD_ITEM,
@@ -14,5 +14,9 @@ const deleteItem= item => ({
     payload: item
 })
 
-export default {addItem, deleteItem, Types};
+const resetCart= () => ({
+    type: Types.RESET_CART
+})
+
+export default {addItem, deleteItem, resetCart, Types};
 

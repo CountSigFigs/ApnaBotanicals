@@ -24,38 +24,30 @@ const mapStateToProps= state => {
 }
 
 const mapDispatchToProps= dispatch => ({
-    addItem: item => dispatch(ACTIONS.addItem(item))
+    addItem: item => dispatch(ACTIONS.addItem(item)),
+    deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
+    resetCart: () => dispatch(ACTIONS.resetCart())
 })
 
 class Main extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-        }
+        
         this.handleClick = this.handleClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
 
     handleClick(item) {
-        //updates quanity of item if already in cart
         this.props.addItem(item)
     }
 
-    //deletes item from cart 
     handleDelete(item) {
-        let newCart = this.state.cart;
-        let index = newCart.indexOf(item)
-        newCart.splice(index, 1)
-        this.setState({
-            cart: newCart
-        })
+        this.props.deleteItem(item)
     }
 
     handleReset(){
-        this.setState({
-            cart:[]
-        })
+        this.props.resetCart()
     }
     
     render() {

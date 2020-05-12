@@ -35,14 +35,31 @@ export const Reducer = (state= initialState, action) => {
             //adds item to cart if not there already 
             let newCart = [...state.cart]
             newCart.push(item)
-            console.log(newCart)
             return {
                 ...state,
                 cart:newCart
                 }
             }
         }
-        
+
+        case ACTIONS.Types.DELETE_ITEM: {
+            //deletes item from cart
+            let item = action.payload;
+            let newCart = [...state.cart];
+            let index = newCart.indexOf(item)
+            newCart.splice(index, 1)
+            return {
+                ...state,
+                cart: newCart
+            }
+        }
+        case ACTIONS.Types.RESET_CART: {
+            let newCart = [ ];
+            return {
+                ...state,
+                cart: newCart
+            }
+        }
         default: return state
     }
     
