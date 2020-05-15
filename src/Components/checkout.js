@@ -207,7 +207,7 @@ class Checkout extends Component {
     }
 
     if (this.state.touched.billingState) {
-      if (billingState.length > 2) {
+      if (billingState.length !== 2) {
         errors.billingState = 'Please use the abbrievated verison of the state you live in.'
       }
     }
