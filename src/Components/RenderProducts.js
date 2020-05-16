@@ -18,7 +18,7 @@ class RenderProducts extends React.Component{
                             Price: ${item.price} per oz.                    
                         </CardText>
                         Add to Cart
-                        <i class="fa fa-plus-circle fa-2x ml-2" onClick={() => this.props.onClick(item)}></i>
+                        <i className="fa fa-plus-circle fa-2x ml-2" onClick={() => this.props.onClick(item)}></i>
                     </CardBody>
                 </Card>
             </div>

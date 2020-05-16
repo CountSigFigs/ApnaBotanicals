@@ -87,21 +87,24 @@ class DisplayNavbar extends Component {
             <NavItem className='mr-4'>
             <UncontrolledDropdown>
               <DropdownToggle nav id='dropDownMenu'>
-                <i class="fa fa-shopping-cart"></i> Cart <span class="badge badge-light ml-1">{cartLength}</span>
+                <i className="fa fa-shopping-cart"></i> Cart <span className="badge badge-light ml-1">{cartLength}</span>
               </DropdownToggle>
-                <DropdownMenu left id="shoppingCartDropDown">
+                <DropdownMenu left='true' id="shoppingCartDropDown">
                   <div className='container'>
                     <div className='row shoppingCart'>
                       <div className='shopping-cart-header'>
-                      <i class="fa fa-shopping-cart cart-icon"></i>Cart<span class="badge">{cartLength}</span>
-                        <span class="lighter-text float-right">Total: ${total}</span>
+                      <i className="fa fa-shopping-cart cart-icon"></i>Cart<span className="badge">{cartLength}</span>
+                        <span className="lighter-text float-right">Total: ${total}</span>
                       </div>
                       <div className='shopping-items' style={{width:300}}>
-                       {displayItems}
+                      <ul>
+                        {displayItems}
+                      </ul>
+            
                       </div>
-                        <DropdownItem id='checkoutButton'>
-                          <Link to='/shoppingcart'><Button>Checkout</Button></Link>
-                        </DropdownItem>
+                       <DropdownItem>
+                          <Link to='/shoppingcart' className='btn'>Checkout</Link>
+                      </DropdownItem> 
                     </div>
                   </div>
                 </DropdownMenu>

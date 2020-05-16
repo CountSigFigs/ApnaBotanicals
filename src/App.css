@@ -84,6 +84,7 @@ p{
 .btn{
   background-color: #3fbf6b !important;
   border: #3fbf6b !important;
+  color: whitesmoke !important;
 }
 
 .btn:hover{
@@ -198,3 +199,5 @@ form label{
     padding-bottom: 15px;
     width: 300px;
   }
+
+  

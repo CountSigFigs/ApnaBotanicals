@@ -17,7 +17,6 @@ export const Reducer = (state= initialState, action) => {
         case ACTIONS.Types.ADD_ITEM: {
 
             let item= action.payload;
-            console.log(item)
             //checks to see if item is already in cart
             if (state.cart.includes(item)){
 
@@ -34,6 +33,7 @@ export const Reducer = (state= initialState, action) => {
             } else {
             //adds item to cart if not there already 
             let newCart = [...state.cart]
+            item.key = newCart.length;
             newCart.push(item)
             return {
                 ...state,

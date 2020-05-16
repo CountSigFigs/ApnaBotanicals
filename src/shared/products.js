@@ -1,6 +1,6 @@
 export const CAPSULES= [
     {
-        id: 0,
+        id: 5,
         name: 'Kratom Gold',
         type: 'Capsule',
         image: 'assets/images/gold-c.png',
@@ -9,7 +9,7 @@ export const CAPSULES= [
         quanity:1
     },
     {
-        id: 1,
+        id: 6,
         name: 'Kratom Green',
         type: 'Capsule',
         image: 'assets/images/green-c.png',
@@ -18,7 +18,7 @@ export const CAPSULES= [
         quanity:1
     },
     {
-        id: 2,
+        id: 7,
         name: 'Kratom Red',
         type: 'Capsule',
         image: 'assets/images/red-c.png',
@@ -27,7 +27,7 @@ export const CAPSULES= [
         quanity:1
     },
     {
-        id: 3,
+        id: 8,
         name: 'Kratom White',
         type: 'Capsule',
         image: 'assets/images/red-c.png',
@@ -36,7 +36,7 @@ export const CAPSULES= [
         quanity:1
     },
     {
-        id: 4,
+        id: 9,
         name: 'Kratom Yellow',
         type: 'Capsule',
         image: 'assets/images/red-c.png',
