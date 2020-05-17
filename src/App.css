@@ -96,19 +96,19 @@ p{
   color: white
 }
 
-.fa-plus-circle{
+.fa-plus-circle, .fa-minus-circle{
   color: #3FBF6B;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.fa-plus-circle:hover{
+.fa-plus-circle:hover, .fa-minus-circle:hover{
   color: #5ee08c;
   cursor: pointer;
 }
 
-.fa-plus-circle:active {
+.fa-plus-circle:active, .fa-minus-circle:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
