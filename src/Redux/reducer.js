@@ -45,12 +45,22 @@ export const Reducer = (state= initialState, action) => {
         case ACTIONS.Types.DELETE_ITEM: {
             //deletes item from cart
             let item = action.payload;
-            let newCart = [...state.cart];
-            let index = newCart.indexOf(item)
-            newCart.splice(index, 1)
-            return {
-                ...state,
-                cart: newCart
+
+            if (item.quanity > 1){
+                item.quanity-=1;
+                return {
+                    ...state,
+                    cart: [...state.cart]
+                }
+            } else {
+                let newCart = [...state.cart]
+                let index = newCart.indexOf(item)
+                newCart.splice(index, 1)
+
+                return {
+                    ...state,
+                    cart:newCart
+                }
             }
         }
         case ACTIONS.Types.RESET_CART: {

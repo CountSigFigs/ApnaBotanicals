@@ -42,6 +42,6 @@ export const POWDERS= [
         image: 'assets/images/yellow-p.png',
         description: 'Focus and alert',
         price: 10,
-        quanity:10
+        quanity:1
     }
   ]

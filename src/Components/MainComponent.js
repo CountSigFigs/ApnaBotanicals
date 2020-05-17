@@ -74,7 +74,11 @@ class Main extends Component {
                         <ContactUs />
                     </Route>
                     <Route exact path='/shoppingcart'>
-                        <ShoppingCart cart={this.props.cart} onClick={this.handleDelete} />
+                        <ShoppingCart 
+                            cart={this.props.cart} 
+                            onClick={this.handleDelete} 
+                            
+                        />
                     </Route>
                     <Route exact path='/checkout'>
                         <Checkout cart={this.props.cart} onClick={this.handleReset} />
