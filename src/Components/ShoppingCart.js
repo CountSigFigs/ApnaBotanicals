@@ -31,7 +31,9 @@ class RenderCartItems extends Component{
                             <td>{item.type}</td>
                             <td>{item.quanity}</td>
                             <td>${totalPrice}</td>
-                            <td><Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button>
+                            <td>
+                                <Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button>                        
+                                <Button className="btn" onClick={() => this.props.handleClick(item)} >Remove</Button>
                             </td>
                     </tr>
                 )
@@ -107,7 +109,7 @@ class ShoppingCart extends Component {
                 <div className="row">
                     <div className="col text-center mt-3">
                         <h2>Your Shopping Cart</h2>
-                        <RenderCartItems cart={this.props.cart} onClick={this.props.onClick} />
+                        <RenderCartItems cart={this.props.cart} onClick={this.props.onClick} handleClick={this.props.handleClick} />
                     </div>
                 </div>
             </div>
