@@ -31,7 +31,8 @@ class RenderCartItems extends Component{
                             <td>{item.type}</td>
                             <td>{item.quanity}</td>
                             <td>${totalPrice}</td>
-                            <td><Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button></td>
+                            <td><Button className="btn" onClick={() => this.props.onClick(item)} >Remove</Button>
+                            </td>
                     </tr>
                 )
             })
