@@ -20,15 +20,10 @@ export const Reducer = (state= initialState, action) => {
             //checks to see if item is already in cart
             if (state.cart.includes(item)){
 
-                let newCart = [...state.cart]
-                let index = newCart.indexOf(item)
-                newCart.splice(index, 1)
-    
-                let newQuanity= item.quanity+=1;
-                item.quanity= newQuanity
-                newCart.push(item)  
-                return {
-                    ...state, cart: newCart
+                item.quanity+=1;
+                return{
+                    ...state,
+                    cart:[...state.cart]
                 }
             } else {
             //adds item to cart if not there already 
