@@ -50,7 +50,7 @@ class RenderCartItems extends Component{
                                 <th>Product Type</th>
                                 <th>Quanity</th>
                                 <th>Price</th>
-                                <th></th>
+                                <th>Adjust</th>
                             </tr>
                         </thead>
                         <tbody>
