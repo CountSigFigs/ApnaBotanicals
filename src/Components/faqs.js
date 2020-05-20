@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+const picture= require('../shared/Images/closeup.jpg');
 
 class NewUserGuide extends Component {
 
@@ -15,7 +16,7 @@ class NewUserGuide extends Component {
                     <i className="fa fa-leaf fa-4x mt-2"></i>
                     <h2>New User Guide</h2>
                     <hr className="underscore" />
-                    <img src='/assets/images/closeup.jpg' alt='closeup' id="closeUp" className="d-none d-sm-block mx-auto" />
+                    <img src={picture} alt='closeup' id="closeUp" className="d-none d-sm-block mx-auto" />
                 </div>
             </div>
             <div className="row">

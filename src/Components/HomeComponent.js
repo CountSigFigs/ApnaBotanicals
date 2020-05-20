@@ -3,12 +3,16 @@ import Header from './HeaderComponent'
 import { Button, Card, CardTitle, CardImg, } from 'reactstrap'
 import { Link } from 'react-router-dom';
 
+const confusedGuy = require('../shared/Images/confusedguy.png');
+const kratom = require('../shared/Images/kratom6.jpg');
+
+
 function Kratom() {
     return (
         <div className="container kratomInfo mb-5">
             <div className="row">
                 <div className="col-12 col-md-5 text-center">
-                    <img src='/assets/images/kratom6.jpg' className="img-fluid img1" alt='kratom' />
+                    <img src={kratom} className="img-fluid img1" alt='kratom' />
                 </div>
                 <div className="col-12 col-md-7 mt-3">
                     <h2 id="kratom">Kratom</h2>
@@ -55,7 +59,7 @@ function UserFaqs() {
         <div className="container mt-5">
             <div className="row">
                 <div className="col-4 text-center mt-auto">
-                    <img src="/assets/images/hiclipart.com.png" className="img-fluid" style={{height:'250px'}} alt='confused guy'/>
+                    <img src={confusedGuy} className="img-fluid" style={{height:'250px'}} alt='confused guy'/>
                 </div>
                 <div className="col-8 mt-5">
                     <h2>New User Guide</h2>

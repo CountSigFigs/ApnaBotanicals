@@ -1,5 +1,6 @@
 import React from 'react';
 
+const apnaLogo= require('../shared/Images/Apna_logo.png');
 
 function Submission () {
     return(
@@ -10,7 +11,7 @@ function Submission () {
                     <p><em>We have receieved your order</em></p>
                     <p>Your item will be shipped soon. When it does, you'll receive a notification 
                     email with tracking info.</p>
-                    <img src='/assets/images/Apna_logo.png' className="img-fluid" alt='kratom' />
+                    <img src={apnaLogo} className="img-fluid" alt='kratom' />
                 </div>
             </div>
         </div>

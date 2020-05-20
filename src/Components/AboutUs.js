@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Button } from 'reactstrap'
 import {Link} from 'react-router-dom'
 
+const business = require('../shared/Images/business.jpg');
+
 class AboutUs extends Component {
     
     componentDidMount() {
@@ -18,7 +20,7 @@ class AboutUs extends Component {
             </div>
             <div className='row my-2'>
                 <div className="col-8 col-md-6 text-center m-2 mx-auto">
-                    <img src='/assets/images/business.jpg' alt='owners' id="owner" />
+                    <img src={business} alt='owners' id="owner" />
                 </div>
                 <div className="col-9 col-md-5 mx-auto">
                 <h2>About Us</h2>

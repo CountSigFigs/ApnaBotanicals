@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Table, Button } from 'reactstrap'
 import { Link } from 'react-router-dom';
 
+const picture= require('../shared/Images/kra7.jpg');
+
 class RenderCartItems extends Component{
 
     componentDidMount() {
@@ -121,7 +123,7 @@ class ShoppingCart extends Component {
                     <div className="col text-center">
                         <h2>Your Shopping Cart</h2>
                         <p><em>Your cart is empty. How about you go shopping?</em></p>   
-                        <img src='/assets/images/kra7.jpg' alt='leaf' className="m-3" />
+                        <img src={picture} alt='leaf' className="m-3" />
                     </div>
                 </div>
             </div>
