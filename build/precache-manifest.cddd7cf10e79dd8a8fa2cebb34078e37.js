@@ -1,31 +1,43 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b5b73fa57069312913abc8e72a48fc8",
+    "revision": "f4b19f62c6ffe96413e2dd19ed9e33b7",
     "url": "/ApnaBotanicals/index.html"
   },
   {
-    "revision": "7ddb55ee0694b8cae2b0",
+    "revision": "c27accd6ffa446de692a",
     "url": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css"
   },
   {
-    "revision": "88bbd313aa4fe29ba776",
+    "revision": "6ab803d4acc87d8a29b1",
     "url": "/ApnaBotanicals/static/css/main.95330568.chunk.css"
   },
   {
-    "revision": "7ddb55ee0694b8cae2b0",
-    "url": "/ApnaBotanicals/static/js/2.9669fec4.chunk.js"
+    "revision": "c27accd6ffa446de692a",
+    "url": "/ApnaBotanicals/static/js/2.4be5a442.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/ApnaBotanicals/static/js/2.9669fec4.chunk.js.LICENSE.txt"
+    "url": "/ApnaBotanicals/static/js/2.4be5a442.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "88bbd313aa4fe29ba776",
-    "url": "/ApnaBotanicals/static/js/main.a5feb026.chunk.js"
+    "revision": "6ab803d4acc87d8a29b1",
+    "url": "/ApnaBotanicals/static/js/main.0ba3a5f5.chunk.js"
   },
   {
     "revision": "192cb4a620d10b3a0905",
     "url": "/ApnaBotanicals/static/js/runtime-main.bf750e4f.js"
+  },
+  {
+    "revision": "001ac5d7fd115c3a2618c5c59b40c249",
+    "url": "/ApnaBotanicals/static/media/Apna_logo.001ac5d7.png"
+  },
+  {
+    "revision": "0051fedf64fcc12842b0d22b3935931e",
+    "url": "/ApnaBotanicals/static/media/business.0051fedf.jpg"
+  },
+  {
+    "revision": "4174b14b90e44118183cd80e04b9d82c",
+    "url": "/ApnaBotanicals/static/media/closeup.4174b14b.jpg"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
@@ -46,6 +58,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/ApnaBotanicals/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  {
+    "revision": "1bd899b34a53bfec347b610e7c118ae2",
+    "url": "/ApnaBotanicals/static/media/kra7.1bd899b3.jpg"
+  },
+  {
+    "revision": "6dcd00aa9bc4b0785736c5ea71a843e6",
+    "url": "/ApnaBotanicals/static/media/kratom6.6dcd00aa.jpg"
   },
   {
     "revision": "46a15b4fc54cfca883f84d6dd080cd3d",
