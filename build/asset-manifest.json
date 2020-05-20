@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ApnaBotanicals/static/css/main.95330568.chunk.css",
+    "main.js": "/ApnaBotanicals/static/js/main.a5feb026.chunk.js",
+    "main.js.map": "/ApnaBotanicals/static/js/main.a5feb026.chunk.js.map",
+    "runtime-main.js": "/ApnaBotanicals/static/js/runtime-main.bf750e4f.js",
+    "runtime-main.js.map": "/ApnaBotanicals/static/js/runtime-main.bf750e4f.js.map",
+    "static/css/2.8d2045d2.chunk.css": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css",
+    "static/js/2.9669fec4.chunk.js": "/ApnaBotanicals/static/js/2.9669fec4.chunk.js",
+    "static/js/2.9669fec4.chunk.js.map": "/ApnaBotanicals/static/js/2.9669fec4.chunk.js.map",
+    "index.html": "/ApnaBotanicals/index.html",
+    "precache-manifest.5d96700f2dd0858efdf47495061cbc4a.js": "/ApnaBotanicals/precache-manifest.5d96700f2dd0858efdf47495061cbc4a.js",
+    "service-worker.js": "/ApnaBotanicals/service-worker.js",
+    "static/css/2.8d2045d2.chunk.css.map": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css.map",
+    "static/css/main.95330568.chunk.css.map": "/ApnaBotanicals/static/css/main.95330568.chunk.css.map",
+    "static/js/2.9669fec4.chunk.js.LICENSE.txt": "/ApnaBotanicals/static/js/2.9669fec4.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/ApnaBotanicals/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/index.css": "/ApnaBotanicals/static/media/poppins-latin-900italic.f3c803b2.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf750e4f.js",
+    "static/css/2.8d2045d2.chunk.css",
+    "static/js/2.9669fec4.chunk.js",
+    "static/css/main.95330568.chunk.css",
+    "static/js/main.a5feb026.chunk.js"
+  ]
+}

@@ -5,13 +5,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './Redux/configureStore';
 
-const store = ConfigureStore();
-
-class App extends React.Component {
-  render (){
+export default function Routes(){
+  const store = ConfigureStore();
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div id="root">
             <Main />
           </div>
@@ -19,6 +17,5 @@ class App extends React.Component {
       </Provider>
     )
   }
-}
 
-export default App;
+

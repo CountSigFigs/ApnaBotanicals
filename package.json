@@ -1,5 +1,6 @@
 {
   "name": "learningreact",
+  "homepage": "https://CountSigFigs.github.io/ApnaBotanicals",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "4.0.0",
     "font-awesome": "4.7.0",
+    "gh-pages": "^2.2.0",
     "gotu": "^1.0.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -23,6 +25,8 @@
     "typeface-poppins": "^0.0.72"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
