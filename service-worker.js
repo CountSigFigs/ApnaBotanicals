@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ApnaBotanicals/precache-manifest.e1404b042f3e1e1476585f65bb99e9af.js"
+  "/ApnaBotanicals/precache-manifest.e8b5d7482febf1d69cb6eaaa2760ba1d.js"
 );
 
 self.addEventListener('message', (event) => {

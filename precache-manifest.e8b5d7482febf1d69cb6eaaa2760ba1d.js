@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3ede2a594fd45bda862c8669ee123ec9",
+    "revision": "955975bfd84aa134310c873f84537aa3",
     "url": "/ApnaBotanicals/index.html"
   },
   {
-    "revision": "385c13ecffa8d82075b3",
+    "revision": "1fe977dec20855abf0e1",
     "url": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css"
   },
   {
-    "revision": "935ea4c43974ccab6a4e",
+    "revision": "5e423287e9cbd330d07b",
     "url": "/ApnaBotanicals/static/css/main.95330568.chunk.css"
   },
   {
-    "revision": "385c13ecffa8d82075b3",
-    "url": "/ApnaBotanicals/static/js/2.af9f12c9.chunk.js"
+    "revision": "1fe977dec20855abf0e1",
+    "url": "/ApnaBotanicals/static/js/2.908531be.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/ApnaBotanicals/static/js/2.af9f12c9.chunk.js.LICENSE.txt"
+    "url": "/ApnaBotanicals/static/js/2.908531be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "935ea4c43974ccab6a4e",
-    "url": "/ApnaBotanicals/static/js/main.66ef37ea.chunk.js"
+    "revision": "5e423287e9cbd330d07b",
+    "url": "/ApnaBotanicals/static/js/main.025f7d3b.chunk.js"
   },
   {
     "revision": "192cb4a620d10b3a0905",
