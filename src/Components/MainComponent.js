@@ -13,6 +13,7 @@ import Footer from './DisplayFooter';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux';
 import ACTIONS from '../Redux/actions'
+import UserLanding from './UserLanding';
 
 const mapStateToProps= state => {
     return {
@@ -72,6 +73,9 @@ class Main extends Component {
                     </Route>
                     <Route exact path='/contactus'>
                         <ContactUs />
+                    </Route>
+                    <Route exact path='/users'>
+                        <UserLanding />
                     </Route>
                     <Route exact path='/shoppingcart'>
                         <ShoppingCart 

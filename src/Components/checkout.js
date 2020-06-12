@@ -585,7 +585,7 @@ class Checkout extends Component {
                   <FormFeedback>{errors.ccCVV}</FormFeedback>
                 </div>
               </FormGroup>
-              <Link to='./submission'><Button className="btn btn-lg mb-3" type="submit" onClick={this.props.onClick}>Submit Order</Button></Link>
+              <Link to='./submission'><Button className="btn btn-lg mb-3" type="submit" onClick={() => {console.log(this.state)}}>Submit Order</Button></Link>
             </Form>
           </div>
           <div className="col">

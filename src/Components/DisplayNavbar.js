@@ -68,10 +68,10 @@ class DisplayNavbar extends Component {
               </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    <Link to='/directory'>Capsules</Link>
+                    <NavLink to='/directory'>Capsules</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    <Link to='/powders'>Powders</Link>
+                    <NavLink to='/powders'>Powders</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -80,6 +80,9 @@ class DisplayNavbar extends Component {
               </NavItem>
               <NavItem>
                 <NavLink to='/contactus' className="nav-link">Contact Us</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to='/users' className="nav-link">Login</NavLink>
               </NavItem>
             </Nav>
             <Nav>
