@@ -12,19 +12,20 @@ import Home from './HomeComponent'
 import Footer from './DisplayFooter';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux';
-import ACTIONS from '../Redux/actions'
+import * as ACTIONS from '../Redux/actions'
 import UserLanding from './UserLanding';
 
 const mapStateToProps= state => {
     return {
         display: state.display,
         powders: state.powders,
-        products: state.capsules,
+        capsules: state.capsules,
         cart: state.cart
     }
 }
 
 const mapDispatchToProps= dispatch => ({
+    fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
     resetCart: () => dispatch(ACTIONS.resetCart())
@@ -50,7 +51,11 @@ class Main extends Component {
     handleReset(){
         this.props.resetCart()
     }
-    
+    componentDidMount(){
+        this.props.fetchCapsules()
+        console.log(this.props.capsules)
+    }
+
     render() {
         return (
             <div>
@@ -60,7 +65,7 @@ class Main extends Component {
                         <Home display={this.props.display} />
                     </Route>
                     <Route exact path='/directory'>
-                        <DisplayCards products={this.props.products} onClick={this.handleClick} />
+                        <DisplayCards products={this.props.capsules.capsules} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/powders'>
                         <DisplayPowders powders={this.props.powders} onClick={this.handleClick} />

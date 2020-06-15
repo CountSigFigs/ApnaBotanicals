@@ -34,7 +34,7 @@ class RenderCartItems extends Component{
                             <td>{item.quanity}</td>
                             <td>${totalPrice}</td>
                             <td>
-                                 <i class="fa fa-minus-circle fa-2x mr-2" onClick={() => this.props.onClick(item)}></i>
+                                 <i className="fa fa-minus-circle fa-2x mr-2" onClick={() => this.props.onClick(item)}></i>
                                 <i className="fa fa-plus-circle fa-2x" onClick={() => this.props.handleClick(item)} />                       
                             </td>
                     </tr>

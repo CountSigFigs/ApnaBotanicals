@@ -1,9 +1,12 @@
+//const kraGold = require('../shared/Images/kratom6.jpg');
+
+
 export const POWDERS= [
     {
         id: 0,
         name: 'Kratom Gold',
         type: 'Powder',
-        image: 'assets/images/gold-p.png',
+        image: '../shared/Images/gold-p.png',
         description: 'Calming and Soothing',
         price: 10,
         quanity:1

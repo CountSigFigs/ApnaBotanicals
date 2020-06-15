@@ -54,7 +54,6 @@ class DisplayNavbar extends Component {
       )
     })
 
-
     return (
       <div>
         <Navbar light expand="md" className='navigationDisplay'>

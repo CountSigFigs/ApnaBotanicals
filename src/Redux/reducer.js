@@ -1,20 +1,27 @@
 import {DISPLAY} from '../shared/productDisplay';
 import { POWDERS } from '../shared/powders';
-import {CAPSULES} from '../shared/products';
-import ACTIONS from './actions';
+import * as ActionTypes from './actionTypes';
 
 export const initialState = {
     display: DISPLAY,
     powders: POWDERS,
-    capsules: CAPSULES,
+    capsules: { isLoading: true, errMess:null, capsules:[]},
     cart: []
 }
 
 export const Reducer = (state= initialState, action) => {
 
     switch(action.type){
+        case ActionTypes.ADD_CAPSULES:
+            return {...state, capsules:{isLoading: false, errMess: null, capsules: action.payload }}
 
-        case ACTIONS.Types.ADD_ITEM: {
+        case ActionTypes.CAPSULES_LOADING:
+            return {...state, capsules:{isLoading: true, errMess: null, campsites:[]}};
+
+        case ActionTypes.CAPSULES_FAILED:
+            return {...state, capsules:{isLoading: false, errMess: action.payload}};
+
+        case ActionTypes.ADD_ITEM: {
 
             let item= action.payload;
             //checks to see if item is already in cart
@@ -37,7 +44,7 @@ export const Reducer = (state= initialState, action) => {
             }
         }
 
-        case ACTIONS.Types.DELETE_ITEM: {
+        case ActionTypes.DELETE_ITEM: {
             //deletes item from cart
             let item = action.payload;
 
@@ -58,7 +65,7 @@ export const Reducer = (state= initialState, action) => {
                 }
             }
         }
-        case ACTIONS.Types.RESET_CART: {
+        case ActionTypes.RESET_CART: {
             let newCart = [ ];
             return {
                 ...state,
@@ -67,6 +74,5 @@ export const Reducer = (state= initialState, action) => {
         }
         default: return state
     }
-    
 }
 
