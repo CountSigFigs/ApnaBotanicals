@@ -55,10 +55,11 @@ class Main extends Component {
         this.props.fetchCapsules()
         console.log(this.props.capsules)
     }
+
     componentDidUpdate(){
         console.log(this.props.capsules)
     }
-    
+
     render() {
         return (
             <div>
@@ -68,7 +69,7 @@ class Main extends Component {
                         <Home display={this.props.display} />
                     </Route>
                     <Route exact path='/directory'>
-                        <DisplayCards products={this.props.capsules.capsules} onClick={this.handleClick} />
+                        <DisplayCards products={this.props.capsules} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/powders'>
                         <DisplayPowders powders={this.props.powders} onClick={this.handleClick} />

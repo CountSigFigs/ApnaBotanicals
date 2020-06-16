@@ -3,7 +3,7 @@ import { POWDERS } from '../shared/powders';
 import * as ActionTypes from './actionTypes';
 
 export const initialState = {
-    capsules:{isLoading:true, errMess: null, capsules:[]},
+    capsules: [],
     display: DISPLAY,
     powders: POWDERS,
     cart: []
@@ -14,7 +14,7 @@ export const Reducer = (state = initialState, action) => {
     switch(action.type){
 
         case ActionTypes.ADD_CAPSULES:
-            return {...state, capsules:{capsules: action.payload }}
+            return {...state, capsules: action.payload }
 
         case ActionTypes.CAPSULES_LOADING:
             return {...state, capsules:{isLoading: true, errMess: null, campsites:[]}};
@@ -37,6 +37,7 @@ export const Reducer = (state = initialState, action) => {
             //adds item to cart if not there already 
             let newCart = [...state.cart]
             item.key = newCart.length;
+            item.quanity = 1;
             newCart.push(item)
             return {
                 ...state,

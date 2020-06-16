@@ -17,7 +17,6 @@ export const fetchCapsules = () => dispatch => {
         throw errMess;
     }
     )
-    .then(response => console.log(response))
     .then(response => dispatch(addCapsules(response)))
     .catch(error => dispatch(capsulesFailed(error.message)));
 };
