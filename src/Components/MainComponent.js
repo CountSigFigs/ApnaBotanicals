@@ -55,7 +55,10 @@ class Main extends Component {
         this.props.fetchCapsules()
         console.log(this.props.capsules)
     }
-
+    componentDidUpdate(){
+        console.log(this.props.capsules)
+    }
+    
     render() {
         return (
             <div>
