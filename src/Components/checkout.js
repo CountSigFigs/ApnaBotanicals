@@ -113,7 +113,7 @@ class Checkout extends Component {
     };
 
     if (this.state.touched.billingFirstName) {
-      if (billingFirstName.length < 1) {
+      if (billingFirstName.length <= 1) {
         errors.billingFirstName = 'Please enter your first name.';
       }
     }
