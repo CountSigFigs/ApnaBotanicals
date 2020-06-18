@@ -1,90 +1,81 @@
 export const CAPSULES= [
     {
-        id: 0,
         name: 'Kratom Gold',
         type: 'Powder',
-        image: 'assets/images/gold-p.png',
+        image: 'https://i.imgur.com/18iBFMB.png',
         description: 'Calming and Soothing',
         price: 10,
         quanity: 1
     },
     {
-        id: 1,
         name: 'Kratom Green',
         type: 'Powder',
-        image: 'assets/images/green-p.png',
+        image: 'https://i.imgur.com/40Op69l.png',
         description: 'Energy driven, focusing',
         price: 10,
         quanity: 1
     },
     {
-        id: 2,
         name: 'Kratom Red',
         type: 'Powder',
-        image: 'assets/images/red-p.png',
+        image: 'https://i.imgur.com/iUgN0B5.png',
         description: 'Fast and Furious',
         price: 10,
         quanity: 1
     },
     {
-        id: 3,
         name: 'Kratom White',
         type: 'Powder',
-        image: 'assets/images/white-p.png',
+        image: 'https://i.imgur.com/HV1doux.png',
         description: 'Attentive and alert',
         price: 10,
         quanity: 1
     },
     {
-        id: 4,
         name: 'Kratom Yellow',
         type: 'Powder',
-        image: 'assets/images/yellow-p.png',
+        image: 'https://i.imgur.com/BkjmLib.png',
         description: 'Focus and alert',
         price: 10,
         quanity:1
     },
     {
-        id: 5,
         name: 'Kratom Gold',
         type: 'Capsule',
-        image: 'assets/images/gold-c.png',
+        image: 'https://i.imgur.com/IhEUfcs.png',
         description: 'Calming and Soothing',
         price: 10,
         quanity: 1
     },
     {
-        id: 6,
         name: 'Kratom Green',
         type: 'Capsule',
-        image: 'assets/images/green-c.png',
+        image: 'https://i.imgur.com/gF7tHYq.png',
         description: 'Energy driven, focusing',
         price: 10,
         quanity: 1
     },
     {
-        id: 7,
         name: 'Kratom Red',
         type: 'Capsule',
-        image: 'assets/images/red-c.png',
+        image: 'https://i.imgur.com/Zi1AV91.png',
         description: 'Fast and Furious',
         price: 10,
         quanity: 1
     },
     {
-        id: 8,
         name: 'Kratom White',
         type: 'Capsule',
-        image: 'assets/images/red-c.png',
+        image: 'https://i.imgur.com/FPsUklS.png',
         description: 'Attentive and alert',
         price: 10,
         quanity: 1
     },
     {
-        id: 9,
+
         name: 'Kratom Yellow',
         type: 'Capsule',
-        image: 'assets/images/red-c.png',
+        image: 'https://i.imgur.com/lmXg0B4.png',
         description: 'Focus and alert',
         price: 10,
         quanity: 1

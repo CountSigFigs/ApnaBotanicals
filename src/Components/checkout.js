@@ -268,7 +268,7 @@ class Checkout extends Component {
 
     const displayItems = this.props.cart.map(item => {
       return (
-        <li key={item.id} className="list-group-item d-flex justify-content-between">
+        <li key={item._id} className="list-group-item d-flex justify-content-between">
           <div className="my-0">
             <h6>{item.name}</h6>
             <small className="muted">{item.type}  Qty:{item.quanity}</small>
@@ -539,7 +539,7 @@ class Checkout extends Component {
                     onBlur={this.handleBlur("paymentName")}
                     onChange={this.handleInputChange}
                   />
-                  <small class="text-muted">Full name as displayed on card</small>
+                  <small className="text-muted">Full name as displayed on card</small>
                   <FormFeedback>{errors.paymentName}</FormFeedback>
                 </div>
                 <div className="col-12 col-md-6">
@@ -557,7 +557,7 @@ class Checkout extends Component {
                 </div>
               </FormGroup>
               <FormGroup className="row">
-                <div class="col-md-3">
+                <div className="col-md-3">
                   <Label htmlFor="ccExpiration">Expiration</Label>
                   <Input
                     type="text"
@@ -570,11 +570,11 @@ class Checkout extends Component {
                   />
                   <FormFeedback>{errors.ccExpiration}</FormFeedback>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div className="col-md-3 mb-3">
                   <Label htmlFor="ccCV">CVV</Label>
                   <Input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="ccCVV"
                     name="ccCVV"
                     value={this.state.ccCVV}

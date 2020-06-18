@@ -1,11 +1,10 @@
 import {DISPLAY} from '../shared/productDisplay';
-import { POWDERS } from '../shared/powders';
 import * as ActionTypes from './actionTypes';
 
 export const initialState = {
     capsules: [],
     display: DISPLAY,
-    powders: POWDERS,
+    powders: [],
     cart: []
 }
 
@@ -15,12 +14,21 @@ export const Reducer = (state = initialState, action) => {
 
         case ActionTypes.ADD_CAPSULES:
             return {...state, capsules: action.payload }
-
-        case ActionTypes.CAPSULES_LOADING:
-            return {...state, capsules:{isLoading: true, errMess: null, campsites:[]}};
+        //shift alt a
+        /* case ActionTypes.CAPSULES_LOADING:
+            return {...state, capsules:{isLoading: true, errMess: null, capsules:[]}};
 
         case ActionTypes.CAPSULES_FAILED:
             return {...state, capsules:{isLoading: false, errMess: action.payload}}
+ */
+         case ActionTypes.ADD_POWDERS:
+               return {...state, powders: action.payload }
+    /* 
+        case ActionTypes.POWDERS_LOADING:
+                return {...state, powders:{isLoading: true, errMess: null, powders:[]}};
+    
+        case ActionTypes.CAPSULES_FAILED:
+                return {...state, powders:{isLoading: false, errMess: action.payload}} */
 
         case ActionTypes.ADD_ITEM: {
 

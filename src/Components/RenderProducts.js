@@ -8,7 +8,7 @@ class RenderProducts extends React.Component{
     render () {
         const displayItems= this.props.items.map(item =>{
         return (
-            <div key={item.id} className="col-9 col-md-6 col-lg-4 mb-3 mt-3">
+            <div key={item._id} className="col-9 col-md-6 col-lg-4 mb-3 mt-3">
                 <Card className="productDisplay col-9 mx-auto">
                     <CardImg src={item.image} />
                     <CardBody className="text-center">

@@ -48,7 +48,7 @@ class DisplayNavbar extends Component {
     //displays items in dropdown cart
     const displayItems = this.props.cart.map(item => {
       return (
-        <li key={item.id} style={{listStyle:'none'}} className='my-2'>
+        <li key={item._id} style={{listStyle:'none'}} className='my-2'>
           <small><img src={item.image} style={{height:50}} className='mr-2' alt={item.name} />{item.name}</small><small className='float-right mt-3'>Qty: {item.quanity}</small>
         </li>
       )

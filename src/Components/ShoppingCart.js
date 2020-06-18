@@ -27,7 +27,7 @@ class RenderCartItems extends Component{
 
             let totalPrice= item.quanity * item.price;
                 return (
-                    <tr key={item.id}>
+                    <tr key={item._id}>
                             <td><img src={item.image} alt='product' height='100px'/></td>
                             <td>{item.name}</td>
                             <td>{item.type}</td>
