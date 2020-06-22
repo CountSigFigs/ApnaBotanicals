@@ -14,7 +14,6 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux';
 import * as ACTIONS from '../Redux/actions'
 import UserLanding from './UserLanding';
-import { postContact } from '../Redux/actions';
 
 const mapStateToProps= state => {
     return {
