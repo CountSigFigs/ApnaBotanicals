@@ -1,81 +1,42 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Label, Button, FormFeedback} from 'reactstrap'
+import baseUrl from '../shared/baseUrl';
 
 class ContactUs extends Component {
     constructor(props) {
         super(props)
         this.state = {
             name: '',
-            email: '',
             phoneNum: '',
-            feedback: '',
-            touched: {
-                name: false,
-                phoneNum: false,
-                email: false
-            }
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
+            email: '',
+            feedback: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
+    handleChange(event){
+        const {target} = event;
+        const {value} = target;
+        const {name} = target;
 
         this.setState({
             [name]: value
-        });
-    }
-
-    validate(name, phoneNum, email) {
-
-        const errors = {
-            name: '',
-            phoneNum: '',
-            email: ''
-        };
-
-        if (this.state.touched.name) {
-            if (name.length < 2) {
-                errors.name = 'Name must be at least 2 characters.';
-            } 
-        }
-
-        const reg = /^\d+$/;
-        if (this.state.touched.phoneNum){
-            if (phoneNum.length !==10 || !reg.test(phoneNum)){
-              errors.phoneNum='Phone number should be ten digits long.'
-            } 
-          }
-
-        if (this.state.touched.email && !email.includes('@')) {
-            errors.email = 'Email should contain a @';
-        }
-
-        return errors;
-    }
-
-    handleBlur = (field) => () => {
-        this.setState({
-            touched: {...this.state.touched, [field]: true}
-        });
+        })
     }
 
     handleSubmit(event) {
-        console.log('Current state is: ' + JSON.stringify(this.state));
-        alert('Current state is: ' + JSON.stringify(this.state));
+        event.preventDefault()
+        console.log(this.state)
+       this.props.postContact(this.state.name, this.state.phoneNum, this.state.email, this.state.feedback)
     }
 
     componentDidMount() {
         window.scrollTo(0, 0);
       }
-      
+    
     render() {
  
-        const errors = this.validate(this.state.name, this.state.phoneNum, this.state.email); 
         return (
             <div className="container">
                 <div className="row">
@@ -90,43 +51,32 @@ class ContactUs extends Component {
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
                                 <Label htmlFor="name" className="float-left">Name</Label>
-                                <Input type="text" id="name" name="name"
-                                        placeholder="Name"
-                                        value={this.state.name}
-                                        invalid={errors.name}
-                                        onBlur={this.handleBlur("name")}
-                                        onChange={this.handleInputChange} />
-                                <FormFeedback>{errors.name}</FormFeedback>
+                                <Input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name}
+                                        placeholder="Name"/>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="phoneNum" className="float-left">Phone</Label>
-                                <Input type="tel" id="phoneNum" name="phoneNum"
+                                <Input type="tel" id="phoneNum" name="phoneNum" value={this.state.phoneNum}
                                         placeholder="Phone number"
-                                        value={this.state.phoneNum}
-                                        invalid={errors.phoneNum}
-                                        onBlur={this.handleBlur("phoneNum")}
-                                        onChange={this.handleInputChange}  />
-                                <FormFeedback>{errors.phoneNum}</FormFeedback>
+                                        onChange={this.handleChange}
+                                         />
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="email" className="float-left">Email</Label>
-                                <Input type="email" id="email" name="email"
+                                <Input type="email" id="email" name="email" value={this.state.email}
                                         placeholder="Email"
-                                        value={this.state.email}
-                                        invalid={errors.email}
-                                        onBlur={this.handleBlur("email")}
-                                        onChange={this.handleInputChange} />
-                                <FormFeedback>{errors.email}</FormFeedback>
+                                        onChange={this.handleChange}
+                                        />
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="feedback" className="float-left">Your Feedback</Label>
-                                <Input type="textarea" id="feedback" name="feedback"
+                                <Input type="textarea" id="feedback" name="feedback" value={this.state.feedback}
                                         rows="6"
-                                        value={this.state.feedback}
-                                        onChange={this.handleInputChange}></Input>
+                                        onChange={this.handleChange}
+                                       ></Input>
                             </FormGroup>
                             <FormGroup>
-                                <Button type="submit" className="btn btn-lg float-left mb-3">
+                                <Button type="submit" value='submit' className="btn btn-lg float-left mb-3">
                                         Send
                                 </Button>
                             </FormGroup>

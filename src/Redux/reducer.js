@@ -5,7 +5,8 @@ export const initialState = {
     capsules: [],
     display: DISPLAY,
     powders: [],
-    cart: []
+    cart: [],
+    contacts:[]
 }
 
 export const Reducer = (state = initialState, action) => {
@@ -24,11 +25,17 @@ export const Reducer = (state = initialState, action) => {
          case ActionTypes.ADD_POWDERS:
                return {...state, powders: action.payload }
     /* 
+        
         case ActionTypes.POWDERS_LOADING:
                 return {...state, powders:{isLoading: true, errMess: null, powders:[]}};
     
         case ActionTypes.CAPSULES_FAILED:
                 return {...state, powders:{isLoading: false, errMess: action.payload}} */
+        
+        case ActionTypes.ADD_CONTACT: {
+            const contact = action.payload;
+            return {...state, contacts: state.contacts.concat(contact)}
+        }
 
         case ActionTypes.ADD_ITEM: {
 

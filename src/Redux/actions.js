@@ -41,6 +41,45 @@ export const fetchPowders = () => dispatch => {
     .catch(error => dispatch(powdersFailed(error.message)));
 };
 
+export const postContact= (name, phone, email, feedback) => dispatch => {
+    const newContact= {
+        name:name,
+        phone:phone,
+        email:email,
+        feedback:feedback
+    }
+
+    return fetch(baseUrl + 'contact', {
+        method: "POST",
+        body: JSON.stringify(newContact),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok){
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => { throw error; }
+    )
+    .then(response => response.json())
+    .then(response => dispatch(addContact(response)))
+    .catch(error => {
+        console.log('post contact', error.message);
+        alert('Your message could not be posted\nError: ' + error.message);
+    });
+};
+
+export const addContact = contact => ({
+    type: ActionTypes.ADD_CONTACT,
+    payload: contact
+});
+
 export const addPowders = powders => ({
     type: ActionTypes.ADD_POWDERS,
     payload: powders

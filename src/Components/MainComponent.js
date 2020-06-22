@@ -14,19 +14,22 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux';
 import * as ACTIONS from '../Redux/actions'
 import UserLanding from './UserLanding';
+import { postContact } from '../Redux/actions';
 
 const mapStateToProps= state => {
     return {
         display: state.display,
         powders: state.powders,
         capsules: state.capsules,
-        cart: state.cart
+        cart: state.cart,
+        contacts: state.contacts
     }
 }
 
-const mapDispatchToProps= dispatch => ({
+const mapDispatchToProps = dispatch => ({
     fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
     fetchPowders: () => dispatch(ACTIONS.fetchPowders()),
+    postContact: (name, phone, email, feedback) => dispatch(ACTIONS.postContact(name, phone, email, feedback)),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
     resetCart: () => dispatch(ACTIONS.resetCart())
@@ -83,7 +86,7 @@ class Main extends Component {
                         <NewUserGuide />
                     </Route>
                     <Route exact path='/contactus'>
-                        <ContactUs />
+                        <ContactUs postContact={this.props.postContact}/>
                     </Route>
                     <Route exact path='/users'>
                         <UserLanding />
