@@ -21,7 +21,8 @@ const mapStateToProps= state => {
         powders: state.powders,
         capsules: state.capsules,
         cart: state.cart,
-        contacts: state.contacts
+        contacts: state.contacts,
+        reviews: state.reviews
     }
 }
 
@@ -63,7 +64,7 @@ class Main extends Component {
     }
 
     componentDidUpdate(){
-        console.log(this.props.contacts)
+        console.log(this.props.reviews)
     }
 
     render() {
@@ -81,7 +82,7 @@ class Main extends Component {
                         <DisplayPowders powders={this.props.powders} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/about'>
-                        <AboutUs />
+                        <AboutUs reviews={this.props.reviews}/>
                     </Route>
                     <Route exact path='/guide'>
                         <NewUserGuide />

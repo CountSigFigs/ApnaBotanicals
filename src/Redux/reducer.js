@@ -41,7 +41,7 @@ export const Reducer = (state = initialState, action) => {
             const contacts = action.payload;
             return {...state, contacts}
         }
-        
+
         case ActionTypes.ADD_ITEM: {
 
             let item= action.payload;

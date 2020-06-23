@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Button } from 'reactstrap'
-import {Link} from 'react-router-dom'
+import { Button } from 'reactstrap';
+import {Link} from 'react-router-dom';
+import Reviews from './Reviews';
 
 const business = require('../shared/Images/business.jpg');
 
@@ -31,6 +32,7 @@ class AboutUs extends Component {
                 <Button className="btn btn-lg" id="contactButton"><Link to='/contactus'>Contact Us</Link></Button>
                 </div>
             </div>
+            <Reviews />
         </div>
     )
     }

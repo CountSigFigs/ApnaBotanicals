@@ -83,6 +83,9 @@ class DisplayNavbar extends Component {
               <NavItem>
                 <NavLink to='/users' className="nav-link">Login</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink to='/about' className="nav-link">About Us</NavLink>
+              </NavItem>
             </Nav>
             <Nav>
             <NavItem className='mr-4'>

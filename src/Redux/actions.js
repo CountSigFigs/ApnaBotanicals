@@ -61,6 +61,8 @@ export const fetchContacts = () => dispatch => {
     .catch(error => console.log(error));
 };
 
+
+
 export const postContact= (name, phone, email, feedback) => dispatch => {
     const newContact= {
         name:name,
@@ -94,6 +96,7 @@ export const postContact= (name, phone, email, feedback) => dispatch => {
         alert('Your message could not be posted\nError: ' + error.message);
     });
 };
+
 
 export const addContact = contact => ({
     type: ActionTypes.ADD_CONTACT,
