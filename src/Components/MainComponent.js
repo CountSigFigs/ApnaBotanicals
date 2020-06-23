@@ -28,6 +28,7 @@ const mapStateToProps= state => {
 const mapDispatchToProps = dispatch => ({
     fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
     fetchPowders: () => dispatch(ACTIONS.fetchPowders()),
+    fetchContacts: () => dispatch(ACTIONS.fetchContacts()),
     postContact: (name, phone, email, feedback) => dispatch(ACTIONS.postContact(name, phone, email, feedback)),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
@@ -58,10 +59,11 @@ class Main extends Component {
     componentDidMount(){
         this.props.fetchCapsules()
         this.props.fetchPowders()
-        
+        this.props.fetchContacts()
     }
 
     componentDidUpdate(){
+        console.log(this.props.contacts)
     }
 
     render() {

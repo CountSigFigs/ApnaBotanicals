@@ -41,6 +41,26 @@ export const fetchPowders = () => dispatch => {
     .catch(error => dispatch(powdersFailed(error.message)));
 };
 
+export const fetchContacts = () => dispatch => {
+    return fetch(baseUrl + 'contact')
+    .then(response => {
+        if (response.ok){
+            return response.json();
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess= new Error(error.message);
+        throw errMess;
+    }
+    )
+    .then(response => dispatch(addContacts(response)))
+    .catch(error => console.log(error));
+};
+
 export const postContact= (name, phone, email, feedback) => dispatch => {
     const newContact= {
         name:name,
@@ -78,6 +98,11 @@ export const postContact= (name, phone, email, feedback) => dispatch => {
 export const addContact = contact => ({
     type: ActionTypes.ADD_CONTACT,
     payload: contact
+});
+
+export const addContacts = contacts => ({
+    type: ActionTypes.ADD_CONTACTS,
+    payload: contacts
 });
 
 export const addPowders = powders => ({

@@ -11,4 +11,5 @@ export const DELETE_ITEM = 'DELETE_ITEM';
 export const RESET_CART = 'RESET_CART';
 
 export const ADD_CONTACT = 'ADD_CONTACT';
+export const ADD_CONTACTS = 'ADD_CONTACTS';
 

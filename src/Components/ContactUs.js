@@ -8,44 +8,12 @@ class ContactUs extends Component {
             name: '',
             phoneNum: '',
             email: '',
-            feedback: '',
-            touched: {
-                name: false,
-                phoneNum: false,
-                email: false,
-            }
+            feedback: ''
         }
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    validate(name, phoneNum, email){
-        const errors= {
-            name:'',
-            phoneNum:'',
-            email:''
-        }
-
-        if (this.state.touched.name) {
-            if (name.length < 2) {
-              errors.name = 'Name must be longer than 2 letters';
-            }
-          }
-        
-        
-        if (this.state.touched.email){
-            if (!email.includes('@')){
-                errors.email= 'Email must contain an @ sign'
-            }
-        }
-        return errors
-    }
-    
-    handleBlur = (field) => () => {
-        this.setState({
-          touched: { ...this.state.touched, [field]: true }
-        });
-      }
 
     handleChange(event){
         const {target} = event;
@@ -56,7 +24,7 @@ class ContactUs extends Component {
             [name]: value
         })
     }
-
+    
     handleSubmit(event) {
         event.preventDefault()
         console.log(this.state)
@@ -68,12 +36,6 @@ class ContactUs extends Component {
       }
     
     render() {
-
-        const errors = this.validate(
-            this.state.name,
-            this.state.email,
-            this.state.phoneNum,
-        )
 
         return (
             <div className="container">
@@ -90,28 +52,26 @@ class ContactUs extends Component {
                             <FormGroup>
                                 <Label htmlFor="name" className="float-left">Name</Label>
                                 <Input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name}
-                                        placeholder="Name" invalid={errors.name}
-                                        onBlur={this.handleBlur("name")}/>
-                                <FormFeedback>{errors.name}</FormFeedback>
+                                        placeholder="Name"
+                                />
+                                
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="phoneNum" className="float-left">Phone</Label>
                                 <Input type="tel" id="phoneNum" name="phoneNum" value={this.state.phoneNum}
                                         placeholder="Phone number"
                                         onChange={this.handleChange}
-                                        invalid={errors.phoneNum}
-                                        onBlur={this.handleBlur("phoneNum")}
+                                
                                          />
-                                <FormFeedback>{errors.phoneNum}</FormFeedback>
+                              
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="email" className="float-left">Email</Label>
                                 <Input type="email" id="email" name="email" value={this.state.email}
                                         placeholder="Email"
                                         onChange={this.handleChange}
-                                        invalid={errors.email}
-                                        onBlur={this.handleBlur("email")}
                                     />
+                                
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="feedback" className="float-left">Your Feedback</Label>

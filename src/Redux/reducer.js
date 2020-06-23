@@ -37,6 +37,11 @@ export const Reducer = (state = initialState, action) => {
             return {...state, contacts: state.contacts.concat(contact)}
         }
 
+        case ActionTypes.ADD_CONTACTS: {
+            const contacts = action.payload;
+            return {...state, contacts}
+        }
+        
         case ActionTypes.ADD_ITEM: {
 
             let item= action.payload;
