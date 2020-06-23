@@ -97,6 +97,44 @@ export const postContact= (name, phone, email, feedback) => dispatch => {
     });
 };
 
+export const postReview= (name, title, feedback) => dispatch => {
+
+    const newReview= {
+        name,
+        title,
+        feedback
+    }
+
+    return fetch(baseUrl + 'reviews', {
+        method: "POST",
+        body: JSON.stringify(newReview),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok){
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => { throw error; }
+    )
+    .then(response => response.json())
+    .then(response => dispatch(addReview(response)))
+    .catch(error => {
+        console.log('post contact', error.message);
+        alert('Your message could not be posted\nError: ' + error.message);
+    });
+};
+
+export const addReview = review => ({
+    type: ActionTypes.ADD_REVIEW,
+    payload: review
+});
 
 export const addContact = contact => ({
     type: ActionTypes.ADD_CONTACT,

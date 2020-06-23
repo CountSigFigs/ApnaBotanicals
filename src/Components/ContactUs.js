@@ -49,12 +49,18 @@ class ContactUs extends Component {
                 <div className="row">
                     <div className="col-10 col-md-6 mx-auto text-center">
                         <Form onSubmit={this.handleSubmit}>
-                            <FormGroup>
+                        <FormGroup>
                                 <Label htmlFor="name" className="float-left">Name</Label>
                                 <Input type="text" id="name" name="name" onChange={this.handleChange} value={this.state.name}
                                         placeholder="Name"
                                 />
                                 
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="email" className="float-left">Email</Label>
+                                <Input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email}
+                                        placeholder="Name"
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="phoneNum" className="float-left">Phone</Label>
@@ -63,15 +69,6 @@ class ContactUs extends Component {
                                         onChange={this.handleChange}
                                 
                                          />
-                              
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="email" className="float-left">Email</Label>
-                                <Input type="email" id="email" name="email" value={this.state.email}
-                                        placeholder="Email"
-                                        onChange={this.handleChange}
-                                    />
-                                
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="feedback" className="float-left">Your Feedback</Label>

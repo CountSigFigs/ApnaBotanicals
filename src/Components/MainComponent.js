@@ -30,6 +30,7 @@ const mapDispatchToProps = dispatch => ({
     fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
     fetchPowders: () => dispatch(ACTIONS.fetchPowders()),
     fetchContacts: () => dispatch(ACTIONS.fetchContacts()),
+    postReview: (name, title, feedback) => dispatch(ACTIONS.postReview(name, title, feedback)),
     postContact: (name, phone, email, feedback) => dispatch(ACTIONS.postContact(name, phone, email, feedback)),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
@@ -64,7 +65,7 @@ class Main extends Component {
     }
 
     componentDidUpdate(){
-        console.log(this.props.reviews)
+       
     }
 
     render() {
@@ -82,7 +83,7 @@ class Main extends Component {
                         <DisplayPowders powders={this.props.powders} onClick={this.handleClick} />
                     </Route>
                     <Route exact path='/about'>
-                        <AboutUs reviews={this.props.reviews}/>
+                        <AboutUs reviews={this.props.reviews} postReview={this.props.postReview}/>
                     </Route>
                     <Route exact path='/guide'>
                         <NewUserGuide />
