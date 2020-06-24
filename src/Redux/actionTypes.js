@@ -14,3 +14,4 @@ export const ADD_CONTACT = 'ADD_CONTACT';
 export const ADD_CONTACTS = 'ADD_CONTACTS';
 
 export const ADD_REVIEW = 'ADD_REVIEW';
+export const ADD_REVIEWS = 'ADD_REVIEWS';

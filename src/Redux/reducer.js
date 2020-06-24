@@ -25,6 +25,9 @@ export const Reducer = (state = initialState, action) => {
  */
          case ActionTypes.ADD_POWDERS:
                return {...state, powders: action.payload }
+
+        case ActionTypes.ADD_REVIEWS:
+            return {...state, reviews: action.payload}
     /* 
         
         case ActionTypes.POWDERS_LOADING:

@@ -61,7 +61,25 @@ export const fetchContacts = () => dispatch => {
     .catch(error => console.log(error));
 };
 
-
+export const fetchReviews = () => dispatch => {
+    return fetch(baseUrl + 'reviews')
+    .then(response => {
+        if (response.ok){
+            return response.json();
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess= new Error(error.message);
+        throw errMess;
+    }
+    )
+    .then(response => dispatch(addReviews(response)))
+    .catch(error => console.log(error));
+};
 
 export const postContact= (name, phone, email, feedback) => dispatch => {
     const newContact= {
@@ -97,11 +115,11 @@ export const postContact= (name, phone, email, feedback) => dispatch => {
     });
 };
 
-export const postReview= (name, title, feedback) => dispatch => {
+export const postReview= (title, name, feedback) => dispatch => {
 
     const newReview= {
-        name,
         title,
+        name,
         feedback
     }
 
@@ -134,6 +152,11 @@ export const postReview= (name, title, feedback) => dispatch => {
 export const addReview = review => ({
     type: ActionTypes.ADD_REVIEW,
     payload: review
+});
+
+export const addReviews = reviews => ({
+    type: ActionTypes.ADD_REVIEWS,
+    payload: reviews
 });
 
 export const addContact = contact => ({

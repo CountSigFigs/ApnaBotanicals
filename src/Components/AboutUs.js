@@ -9,8 +9,8 @@ class AboutUs extends Component {
     constructor(props){
         super(props)
         this.state={
-            name:'',
             title:'',
+            name:'',
             feedback:''
         }
 
