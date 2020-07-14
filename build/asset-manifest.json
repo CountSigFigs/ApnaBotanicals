@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/ApnaBotanicals/static/css/main.95330568.chunk.css",
+    "main.js": "/ApnaBotanicals/static/js/main.c0c3377a.chunk.js",
+    "main.js.map": "/ApnaBotanicals/static/js/main.c0c3377a.chunk.js.map",
+    "runtime-main.js": "/ApnaBotanicals/static/js/runtime-main.bf750e4f.js",
+    "runtime-main.js.map": "/ApnaBotanicals/static/js/runtime-main.bf750e4f.js.map",
+    "static/css/2.8d2045d2.chunk.css": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css",
+    "static/js/2.9d067869.chunk.js": "/ApnaBotanicals/static/js/2.9d067869.chunk.js",
+    "static/js/2.9d067869.chunk.js.map": "/ApnaBotanicals/static/js/2.9d067869.chunk.js.map",
+    "index.html": "/ApnaBotanicals/index.html",
+    "precache-manifest.494c59ecad2229c7337e4f03beea93fe.js": "/ApnaBotanicals/precache-manifest.494c59ecad2229c7337e4f03beea93fe.js",
+    "service-worker.js": "/ApnaBotanicals/service-worker.js",
+    "static/css/2.8d2045d2.chunk.css.map": "/ApnaBotanicals/static/css/2.8d2045d2.chunk.css.map",
+    "static/css/main.95330568.chunk.css.map": "/ApnaBotanicals/static/css/main.95330568.chunk.css.map",
+    "static/js/2.9d067869.chunk.js.LICENSE.txt": "/ApnaBotanicals/static/js/2.9d067869.chunk.js.LICENSE.txt",
+    "static/media/Apna_logo.png": "/ApnaBotanicals/static/media/Apna_logo.001ac5d7.png",
+    "static/media/business.jpg": "/ApnaBotanicals/static/media/business.0051fedf.jpg",
+    "static/media/closeup.jpg": "/ApnaBotanicals/static/media/closeup.4174b14b.jpg",
+    "static/media/font-awesome.css": "/ApnaBotanicals/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/kra7.jpg": "/ApnaBotanicals/static/media/kra7.1bd899b3.jpg",
+    "static/media/kratom6.jpg": "/ApnaBotanicals/static/media/kratom6.6dcd00aa.jpg",
+    "static/media/index.css": "/ApnaBotanicals/static/media/poppins-latin-900italic.f3c803b2.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf750e4f.js",
+    "static/css/2.8d2045d2.chunk.css",
+    "static/js/2.9d067869.chunk.js",
+    "static/css/main.95330568.chunk.css",
+    "static/js/main.c0c3377a.chunk.js"
+  ]
+}
