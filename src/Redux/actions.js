@@ -35,6 +35,40 @@ export const capsulesFailed = errMess => ({
     payload: errMess
 });
 
+export const fetchPowders = () => dispatch => {
+    return fetch(baseUrl + 'powders')
+    .then(response => {
+        if (response.ok){
+            return response.json();
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => {
+        const errMess= new Error(error.message);
+        throw errMess;
+    }
+    )
+    .then(response => dispatch(addPowders(response)))
+    .catch(error => dispatch(powdersFailed(error.message)));
+};
+
+export const addPowders = powders => ({
+    type: ActionTypes.ADD_POWDERS,
+    payload: powders
+});
+
+export const powdersLoading = () => ({
+    type: ActionTypes.POWDERS_LOADING
+});
+
+export const powdersFailed = errMess => ({
+    type: ActionTypes.POWDERS_FAILED,
+    payload: errMess
+});
+
 export const addItem = item => ({
     type: ActionTypes.ADD_ITEM,
     payload: item

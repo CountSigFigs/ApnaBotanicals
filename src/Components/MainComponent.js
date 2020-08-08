@@ -26,6 +26,7 @@ const mapStateToProps= state => {
 
 const mapDispatchToProps= dispatch => ({
     fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
+    fetchPowders:() => dispatch(ACTIONS.fetchPowders()),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
     resetCart: () => dispatch(ACTIONS.resetCart())
@@ -53,11 +54,11 @@ class Main extends Component {
     }
     componentDidMount(){
         this.props.fetchCapsules()
-        console.log(this.props.capsules)
+        this.props.fetchPowders()
     }
 
     componentDidUpdate(){
-        console.log(this.props.capsules)
+        console.log(this.props.powders)
     }
 
     render() {

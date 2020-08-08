@@ -17,10 +17,19 @@ export const Reducer = (state = initialState, action) => {
             return {...state, capsules: action.payload }
 
         case ActionTypes.CAPSULES_LOADING:
-            return {...state, capsules:{isLoading: true, errMess: null, campsites:[]}};
+            return {...state, capsules:{isLoading: true, errMess: null, capules:[]}};
 
         case ActionTypes.CAPSULES_FAILED:
             return {...state, capsules:{isLoading: false, errMess: action.payload}}
+
+        case ActionTypes.ADD_POWDERS:
+                return {...state, powders: action.payload }
+    
+        case ActionTypes.POWDERS_LOADING:
+                return {...state, powders:{isLoading: true, errMess: null, powders:[]}};
+    
+        case ActionTypes.POWDERS_FAILED:
+                return {...state, powders:{isLoading: false, errMess: action.payload}}
 
         case ActionTypes.ADD_ITEM: {
 
