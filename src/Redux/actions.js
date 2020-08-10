@@ -69,6 +69,48 @@ export const powdersFailed = errMess => ({
     payload: errMess
 });
 
+export const postComment= (name, phone, email, feedback) => dispatch => {
+   
+    const newContact= {
+        name,
+        phone,
+        email,
+        feedback
+    }
+
+    //newContact.date = new Date ().toISOString();
+
+    return fetch(baseUrl + 'contacts', {
+        method: "POST",
+        body: JSON.stringify(newContact),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok){
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response=response;
+            throw error;
+        }
+    },
+    error => { throw error; }
+    )
+    .then(response => response.json())
+    .then(response => dispatch(addComment(response)))
+    .catch(error => {
+        console.log('post comment', error.message);
+       // alert('Your comment could not be posted\nError: ' + error.message);
+    });
+};
+
+export const addComment = comment => ({
+    type: ActionTypes.ADD_COMMENT,
+    payload: comment
+});
+
 export const addItem = item => ({
     type: ActionTypes.ADD_ITEM,
     payload: item

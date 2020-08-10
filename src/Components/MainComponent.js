@@ -20,13 +20,15 @@ const mapStateToProps= state => {
         display: state.display,
         powders: state.powders,
         capsules: state.capsules,
-        cart: state.cart
+        cart: state.cart,
+        comment: state.comment
     }
 }
 
 const mapDispatchToProps= dispatch => ({
     fetchCapsules: () => dispatch(ACTIONS.fetchCapsules()),
     fetchPowders:() => dispatch(ACTIONS.fetchPowders()),
+    postComment:(name, phone, email, feedback) => dispatch(ACTIONS.postComment(name, phone, email, feedback)),
     addItem: item => dispatch(ACTIONS.addItem(item)),
     deleteItem: item => dispatch(ACTIONS.deleteItem(item)),
     resetCart: () => dispatch(ACTIONS.resetCart())
@@ -58,7 +60,7 @@ class Main extends Component {
     }
 
     componentDidUpdate(){
-        console.log(this.props.powders)
+        console.log(this.props.comment)
     }
 
     render() {
@@ -82,7 +84,7 @@ class Main extends Component {
                         <NewUserGuide />
                     </Route>
                     <Route exact path='/contactus'>
-                        <ContactUs />
+                        <ContactUs postComment={this.props.postComment}/>
                     </Route>
                     <Route exact path='/users'>
                         <UserLanding />

@@ -65,8 +65,9 @@ class ContactUs extends Component {
     }
 
     handleSubmit(event) {
-        console.log('Current state is: ' + JSON.stringify(this.state));
-        alert('Current state is: ' + JSON.stringify(this.state));
+        //alert(`Thank you ${this.state.name} for your feedback. We will react out shortly`)
+        alert(`Thank you ${this.state.name} for your feedback. We will be in touch shortly`)
+        this.props.postComment(this.state.name, this.state.phoneNum, this.state.email, this.state.feedback)
     }
 
     componentDidMount() {

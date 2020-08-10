@@ -6,7 +6,8 @@ export const initialState = {
     capsules: [],
     display: DISPLAY,
     powders: POWDERS,
-    cart: []
+    cart: [],
+    comment:{}
 }
 
 export const Reducer = (state = initialState, action) => {
@@ -29,7 +30,11 @@ export const Reducer = (state = initialState, action) => {
                 return {...state, powders:{isLoading: true, errMess: null, powders:[]}};
     
         case ActionTypes.POWDERS_FAILED:
-                return {...state, powders:{isLoading: false, errMess: action.payload}}
+                return {...state, powders:{isLoading: false, errMess: action.payload}};
+
+        case ActionTypes.ADD_COMMENT:
+                const newComment = action.payload;
+                return {...state, comment: newComment};
 
         case ActionTypes.ADD_ITEM: {
 

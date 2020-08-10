@@ -6,6 +6,8 @@ export const ADD_POWDERS='ADD_POWDERS';
 export const POWDERS_LOADING= 'POWDERS_LOADING';
 export const POWDERS_FAILED= 'POWDERS_FAILED';
 
-export const ADD_ITEM = 'ADD_ITEM'
-export const DELETE_ITEM = 'DELETE_ITEM'
-export const RESET_CART = 'RESET_CART'
+export const ADD_ITEM = 'ADD_ITEM';
+export const DELETE_ITEM = 'DELETE_ITEM';
+export const RESET_CART = 'RESET_CART';
+
+export const ADD_COMMENT = 'ADD_COMMENT';
