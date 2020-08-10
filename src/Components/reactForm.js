@@ -6,53 +6,54 @@ import ErrorMessage from './errorMessage';
 function ContactUs(){
 
         const { register, handleSubmit, errors } = useForm();
-        const onSubmit = data => console.log(data)
+        const onSubmit = data => console.log(data);
+
         return (
             <div className="container">
                 <div className="row">
                     <div className="col text-center mt-3">
                         <i className="fa fa-leaf fa-4x mt-1"></i>
-                        <h2>Send Us Your Feedback</h2>
+                        <h2>Send</h2>
                         <p><em>We would love to hear from you!</em></p>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-10 col-md-6 mx-auto text-center">
-                        <Form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <FormGroup>
                                 <Label htmlFor="name" className="float-left">Name</Label>
-                                <Input id="name" name="name"
-                                        defaultValue="Name"
-                                        ref={register({required:true, minLength:2})}
-                                       />
-                                <FormFeedback>{errors.name}</FormFeedback>
+                                <Input 
+                                    name="name"
+                                    innerRef={register({ required:true, minLength:2})}
+                                />
+                                {errors.name && errors.name.type ==='required' && <span style={{color:'red'}}>'This field is required'</span>}
+                                {errors.name && errors.name.type === 'minLength'  && <span style={{color:'red'}}>'Your name must be at least two characters'</span>}
                             </FormGroup>
-                            <FormGroup>
                                 <Label htmlFor="phoneNum" className="float-left">Phone</Label>
-                                <Input type="tel" id="phoneNum" name="phoneNum"
-                                        placeholder="Phone number"
-                                         />
-                                <FormFeedback></FormFeedback>
-                            </FormGroup>
-                            <FormGroup>
+                                <Input
+                                    name="phoneNum"
+                                    innerRef={register({ required: true})}
+                                />
+                                {errors.phoneNum && <div style={{color:'red'}}>'This field is required'</div>}
                                 <Label htmlFor="email" className="float-left">Email</Label>
-                                <Input type="email" id="email" name="email"
-                                        placeholder="Email"
-                                        />
-                                <FormFeedback></FormFeedback>
-                            </FormGroup>
-                            <FormGroup>
+                                <Input
+                                    name="email"
+                                    innerRef={register({required:true})}
+                                />
+                                {errors.email && <div style={{color:'red'}}>'This field is required'</div>}
                                 <Label htmlFor="feedback" className="float-left">Your Feedback</Label>
-                                <Input type="textarea" id="feedback" name="feedback"
-                                        rows="6"
-                                        ></Input>
-                            </FormGroup>
-                            <FormGroup>
-                                <Button type="submit" className="btn btn-lg float-left mb-3">
+                                <Input
+                                    type="textarea" 
+                                    name="feedback"
+                                    rows="6"
+                                    innerRef={register({required:true, minLength:5})}
+                                ></Input>
+                                {errors.feedback && errors.feedback.type === 'required' && <div style={{color:'red'}}>'This field is required'</div>}
+                                {errors.feedback && errors.feedback.type === 'minLength'  && <span style={{color:'red'}}>'Your feedback must be at least five characters'</span>}
+                                <button type="submit" className="btn btn-lg float-left mb-3">
                                         Send
-                                </Button>
-                            </FormGroup>
-                        </Form>
+                                </button>
+                        </form>
                     </div>
                 </div>
             </div>

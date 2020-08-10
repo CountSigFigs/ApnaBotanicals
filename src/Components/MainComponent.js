@@ -3,7 +3,7 @@ import DisplayNavbar from './DisplayNavbar'
 import DisplayCards from './DisplayCards'
 import DisplayPowders from './DisplayPowders'
 import AboutUs from './AboutUs';
-import ContactUs from './ContactUs';
+import ContactUs from './reactForm';
 import NewUserGuide from './faqs';
 import ShoppingCart from './ShoppingCart'
 import Checkout from './checkout';
