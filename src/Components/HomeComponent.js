@@ -59,9 +59,9 @@ function UserFaqs() {
         <div className="container mt-5">
             <div className="row">
                 <div className="col-4 text-center mt-auto">
-                    <img src={confusedGuy} className="img-fluid" style={{height:'250px'}} alt='confused guy'/>
+                    <img src={confusedGuy} className="img-fluid d-none d-sm-block" style={{height:'250px'}} alt='confused guy'/>
                 </div>
-                <div className="col-8 mt-5">
+                <div className="col-12 col-sm-8 mt-5 mx-auto">
                     <h2>New User Guide</h2>
                     <p>Head over to our new user guide for some frequently asked questions. We want all of our customers to be informed
                     before they buy which is why we made this. We information on the effects of kratom, how much to take, how to
