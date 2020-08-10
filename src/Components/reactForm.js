@@ -32,9 +32,12 @@ function ContactUs(){
                                 <Label htmlFor="phoneNum" className="float-left">Phone</Label>
                                 <Input
                                     name="phoneNum"
-                                    innerRef={register({ required: true})}
+                                    innerRef={register({ required: true, pattern: /^\d+$/, minLength:10, maxLength:10})}
                                 />
-                                {errors.phoneNum && <div style={{color:'red'}}>'This field is required'</div>}
+                                {errors.phoneNum && errors.phoneNum.type === 'required' && <div style={{color:'red'}}>'This field is required'</div>}
+                                {errors.phoneNum && errors.phoneNum.type === 'pattern' && <div style={{color:'red'}}>'This field must only contain numbers'</div>}
+                                {errors.phoneNum && errors.phoneNum.type === 'minLength' && <div style={{color:'red'}}>'Phone number must be ten digits long'</div>}
+                                {errors.phoneNum && errors.phoneNum.type === 'maxLength' && <div style={{color:'red'}}>'Phone number must be ten digits long'</div>}
                                 <Label htmlFor="email" className="float-left">Email</Label>
                                 <Input
                                     name="email"
