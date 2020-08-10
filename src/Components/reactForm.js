@@ -41,9 +41,10 @@ function ContactUs(){
                                 <Label htmlFor="email" className="float-left">Email</Label>
                                 <Input
                                     name="email"
-                                    innerRef={register({required:true})}
+                                    innerRef={register({required:true, pattern:/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i})}
                                 />
-                                {errors.email && <div style={{color:'red'}}>'This field is required'</div>}
+                                {errors.email && errors.email.type === 'required' && <div style={{color:'red'}}>'This field is required'</div>}
+                                {errors.email && errors.email.type === 'pattern' && <div style={{color:'red'}}>'Please enter a valid email address'</div>}
                                 <Label htmlFor="feedback" className="float-left">Your Feedback</Label>
                                 <Input
                                     type="textarea" 
